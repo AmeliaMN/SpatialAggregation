@@ -1,0 +1,1057 @@
+{"type": "FeatureCollection",
+"features": [    {"geometry": 
+{ "coordinates": 
+[ -118.2972824, 34.0637327 ], 
+"type": "Point"}, 
+"id": "Kang Hodong Baekjeong", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3411527, 34.0623511 ], 
+"type": "Point"}, 
+"id": "Genwa Korean Bbq", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3042982, 34.0524323 ], 
+"type": "Point"}, 
+"id": "Hong Galbi", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3098832, 34.0653391 ], 
+"type": "Point"}, 
+"id": "Han Bat Sul Lung Tang", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2959176, 34.0638434 ], 
+"type": "Point"}, 
+"id": "Ham Ji Park", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2824448, 34.0170512 ], 
+"type": "Point"}, 
+"id": "California Gogi Korean Grill", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2944182, 34.0639796 ], 
+"type": "Point"}, 
+"id": "Seongbukdong", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2913663, 34.0563889 ], 
+"type": "Point"}, 
+"id": "Soowon Galbi KBBQ Restaurant", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2419086, 34.0501638 ], 
+"type": "Point"}, 
+"id": "Tang", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.250742, 34.036018 ], 
+"type": "Point"}, 
+"id": "Yang Ban Sul Lung Tang Restaurant", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.238356, 34.1428003 ], 
+"type": "Point"}, 
+"id": "Kim's Kitchen", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3058503, 34.0528831 ], 
+"type": "Point"}, 
+"id": "Yu Chun Chic Naeng Myun", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2975105, 34.0632983 ], 
+"type": "Point"}, 
+"id": "Hangari Bajirak Kalgooksoo", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2943972, 34.0575692 ], 
+"type": "Point"}, 
+"id": "Jun Won Restaurant", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3419605, 34.0834431 ], 
+"type": "Point"}, 
+"id": "Gang Nam Tofu", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.0927989, 34.0804601 ], 
+"type": "Point"}, 
+"id": "A Ri Rang Tofu House", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2919111, 34.0505463 ], 
+"type": "Point"}, 
+"id": "Mirak 2", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2910698, 34.0602235 ], 
+"type": "Point"}, 
+"id": "Kobawoo House", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2937828, 34.0577266 ], 
+"type": "Point"}, 
+"id": "Tofu and Noodles", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2970934, 34.0630851 ], 
+"type": "Point"}, 
+"id": "Chunju Han-il Kwan", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2975105, 34.0632983 ], 
+"type": "Point"}, 
+"id": "Yangji Gamjatang", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3099539, 34.0560118 ], 
+"type": "Point"}, 
+"id": "Eight Korean BBQ", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3043603, 34.0613906 ], 
+"type": "Point"}, 
+"id": "Myung Dong Kyoja", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2583337, 34.1368406 ], 
+"type": "Point"}, 
+"id": "Mitzee Cafe", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3236501, 34.0785555 ], 
+"type": "Point"}, 
+"id": "Western Doma Noodles", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3759829, 34.0691644 ], 
+"type": "Point"}, 
+"id": "Genwa Korean BBQ", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.1832156, 34.0628532 ], 
+"type": "Point"}, 
+"id": "Cha Cha Chili", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3090326, 34.1813094 ], 
+"type": "Point"}, 
+"id": "Seoul Korean BBQ", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.300739, 34.063882 ], 
+"type": "Point"}, 
+"id": "Yang San Bak", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3395036, 34.0395779 ], 
+"type": "Point"}, 
+"id": "Ondal 2", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3061281, 34.0639032 ], 
+"type": "Point"}, 
+"id": "Hae Jang Chon Korean BBQ Restaurant", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3094569, 34.0560882 ], 
+"type": "Point"}, 
+"id": "Ma Dang Gook Soo", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2772846, 34.0507817 ], 
+"type": "Point"}, 
+"id": "Seoul Garden Restaurant", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3612461, 33.9160197 ], 
+"type": "Point"}, 
+"id": "Pojang Korean Food", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2398809, 34.0490294 ], 
+"type": "Point"}, 
+"id": "Korean Kitchen Hibachi Barbeque", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2945904, 34.0637794 ], 
+"type": "Point"}, 
+"id": "Dan Sung Sa", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3006395, 34.0635723 ], 
+"type": "Point"}, 
+"id": "Mapo Kkak Doo Gee Restaurant", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3160718, 34.0527478 ], 
+"type": "Point"}, 
+"id": "Chung Ki Wa", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2848262, 34.0522286 ], 
+"type": "Point"}, 
+"id": "Olympic Cheonggukjang", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3184738, 34.101906 ], 
+"type": "Point"}, 
+"id": "Ay-Do-No Korean BBQ", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2922708, 34.0530889 ], 
+"type": "Point"}, 
+"id": "Beverly Soon Tofu Restaurant", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3211016, 34.0537817 ], 
+"type": "Point"}, 
+"id": "Olympic Noodle", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3049694, 34.0579282 ], 
+"type": "Point"}, 
+"id": "Dong II Jang Restaurant", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.1469393, 34.0881097 ], 
+"type": "Point"}, 
+"id": "Oo-kook Tofu & BBQ", 
+"properties": {"Rating": 3.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3033254, 34.0574598 ], 
+"type": "Point"}, 
+"id": "Honey Pig", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3006189, 34.0529507 ], 
+"type": "Point"}, 
+"id": "Gam Ja Gol", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.287101, 34.0733109 ], 
+"type": "Point"}, 
+"id": "Cafe Sanjang", 
+"properties": {"Rating": 3.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3102095, 34.0614481 ], 
+"type": "Point"}, 
+"id": "Young Dong Restaurant", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.1327157, 34.1428921 ], 
+"type": "Point"}, 
+"id": "Cham Korean Bistro", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3081153, 34.0575889 ], 
+"type": "Point"}, 
+"id": "Naegohyang Restaurant", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.294401, 34.057972 ], 
+"type": "Point"}, 
+"id": "Koginara", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3095079, 34.0737968 ], 
+"type": "Point"}, 
+"id": "Ttu Rak", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3095732, 34.0673761 ], 
+"type": "Point"}, 
+"id": "Mat Goeul", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3071538, 34.0693338 ], 
+"type": "Point"}, 
+"id": "Zzamong", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.1275861, 34.0945132 ], 
+"type": "Point"}, 
+"id": "Gen Korean BBQ House", 
+"properties": {"Rating": 3.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3993995, 34.0641872 ], 
+"type": "Point"}, 
+"id": "Bibigo", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2400575, 34.0501505 ], 
+"type": "Point"}, 
+"id": "Korean BBQ House", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2921982, 34.052478 ], 
+"type": "Point"}, 
+"id": "Jeon Ju Restaurant", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3859836, 34.0908509 ], 
+"type": "Point"}, 
+"id": "Seoulos Fusion Grille", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2920384, 34.0538792 ], 
+"type": "Point"}, 
+"id": "Bulrocho Korean Restaurant", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3087856, 34.0484681 ], 
+"type": "Point"}, 
+"id": "Road To Seoul", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3757046, 34.140877 ], 
+"type": "Point"}, 
+"id": "Ohana BBQ", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3256902, 34.0479051 ], 
+"type": "Point"}, 
+"id": "Ham Ji Park", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2898631, 34.0562562 ], 
+"type": "Point"}, 
+"id": "Corner Place", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3063365, 34.0574998 ], 
+"type": "Point"}, 
+"id": "Keungama Korean Restaurant", 
+"properties": {"Rating": 3.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2954535, 34.0526431 ], 
+"type": "Point"}, 
+"id": "Surawon", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.309983, 34.0762556 ], 
+"type": "Point"}, 
+"id": "Gonjiam", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.32, 34.0688889 ], 
+"type": "Point"}, 
+"id": "Soo Rak San", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2938053, 34.0577572 ], 
+"type": "Point"}, 
+"id": "House of Chigae", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3203701, 34.0472694 ], 
+"type": "Point"}, 
+"id": "Nam Won Gol", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3055667, 34.0689804 ], 
+"type": "Point"}, 
+"id": "Buil Samgye Tang", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3091579, 34.0744926 ], 
+"type": "Point"}, 
+"id": "The Bun Shop", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3084223, 34.0552101 ], 
+"type": "Point"}, 
+"id": "Gamjabawi", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3104418, 34.05237839999999 ], 
+"type": "Point"}, 
+"id": "Chosun Galbee", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2782222, 34.0529391 ], 
+"type": "Point"}, 
+"id": "Dae Bok Restaurant", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.221867915457, 34.2054905692459 ], 
+"type": "Point"}, 
+"id": "Cho Dang Tofu and BBQ", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.309484, 34.06648 ], 
+"type": "Point"}, 
+"id": "Jang Choong Dong Restaurant", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.1078214, 34.1462662 ], 
+"type": "Point"}, 
+"id": "Gaon Authentic Korean BBQ Restaurant", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3671798, 34.0636407 ], 
+"type": "Point"}, 
+"id": "Genki Grill", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.292074, 34.0521275 ], 
+"type": "Point"}, 
+"id": "Nak Won House", 
+"properties": {"Rating": 3.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3088465, 34.0874193 ], 
+"type": "Point"}, 
+"id": "Choeng Wun Korean BBQ Restaurant", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.292074, 34.0521275 ], 
+"type": "Point"}, 
+"id": "Hodori Restaurant", 
+"properties": {"Rating": 3.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3059761, 34.0526251 ], 
+"type": "Point"}, 
+"id": "Get Bbul", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3236501, 34.0785555 ], 
+"type": "Point"}, 
+"id": "Hwang Hae Do Korean BBQ", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.426606, 33.9969754 ], 
+"type": "Point"}, 
+"id": "Alibi Room", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.4478939, 34.06227790000001 ], 
+"type": "Point"}, 
+"id": "Gushi", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3032819, 34.0765141 ], 
+"type": "Point"}, 
+"id": "Hong Kong Banjum", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.295722, 34.0575623 ], 
+"type": "Point"}, 
+"id": "Soot Bull Jeep", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2975105, 34.0632983 ], 
+"type": "Point"}, 
+"id": "Sun Nong Dan", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2384476, 34.0451298 ], 
+"type": "Point"}, 
+"id": "SKD Tofu House", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.0486188, 34.13495109999999 ], 
+"type": "Point"}, 
+"id": "Lettuce Go", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3250878, 34.0475141 ], 
+"type": "Point"}, 
+"id": "Han Mi Jung", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2546498, 34.1472776 ], 
+"type": "Point"}, 
+"id": "I Love Tofu & BBQ", 
+"properties": {"Rating": 3.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.053601, 34.154567 ], 
+"type": "Point"}, 
+"id": "Young-Dong Tofu Restaurant", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3096483, 34.0686154 ], 
+"type": "Point"}, 
+"id": "Mae Shil Tang Shabu Shabu", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3004703, 34.060178 ], 
+"type": "Point"}, 
+"id": "Myung Dong Noodle House", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.0875785, 34.1037359 ], 
+"type": "Point"}, 
+"id": "Young Dong Tofu", 
+"properties": {"Rating": 3.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2952879, 34.0577189 ], 
+"type": "Point"}, 
+"id": "Mom's House", 
+"properties": {"Rating": 3.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3026405, 34.0524116 ], 
+"type": "Point"}, 
+"id": "Mapo Galbi", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.264858, 34.1585279 ], 
+"type": "Point"}, 
+"id": "Bontobagi", 
+"properties": {"Rating": 3.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.28699, 34.0618169 ], 
+"type": "Point"}, 
+"id": "Red Pepper Korean Restaurant", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.31819152832, 33.9026374816895 ], 
+"type": "Point"}, 
+"id": "Raku Raku", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2990264, 34.0617611 ], 
+"type": "Point"}, 
+"id": "Gwang Yang Korean BBQ", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2959176, 34.0638434 ], 
+"type": "Point"}, 
+"id": "Insadong Galbi Noodle", 
+"properties": {"Rating": 3.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3070336, 34.0687698 ], 
+"type": "Point"}, 
+"id": "The Real 3rd Street Chicken House", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2976989, 34.0524652 ], 
+"type": "Point"}, 
+"id": "Wako Donkasu", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.320056, 34.0535975 ], 
+"type": "Point"}, 
+"id": "Baek Ha Chong", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.4432585, 34.0402401 ], 
+"type": "Point"}, 
+"id": "Tofu Ya", 
+"properties": {"Rating": 3.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.072613, 33.920554 ], 
+"type": "Point"}, 
+"id": "Grill Town", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3706666, 34.1725716 ], 
+"type": "Point"}, 
+"id": "101 Korean BBQ+Sushi", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.4429987, 34.0394395 ], 
+"type": "Point"}, 
+"id": "Seoul Sausage Company", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3199156, 34.0537182 ], 
+"type": "Point"}, 
+"id": "Da Jeong Korean Cuisine", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.1469127, 34.1458175 ], 
+"type": "Point"}, 
+"id": "Kogi BBQ Truck", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.308705, 34.066604 ], 
+"type": "Point"}, 
+"id": "Redsoup", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3110732, 34.0619744 ], 
+"type": "Point"}, 
+"id": "Hong Dae Ip Gu", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.032476864755, 33.9634864038519 ], 
+"type": "Point"}, 
+"id": "Woori Gumi Restaurant", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.4350891, 34.047365 ], 
+"type": "Point"}, 
+"id": "Feast From The East", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3097466, 33.8910568 ], 
+"type": "Point"}, 
+"id": "Gu Jip", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2468023, 34.2288726 ], 
+"type": "Point"}, 
+"id": "Tofu Love", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2831183, 34.0568041 ], 
+"type": "Point"}, 
+"id": "WooRee Restaurant", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.4426416, 34.0392026 ], 
+"type": "Point"}, 
+"id": "Seoul House of Tofu", 
+"properties": {"Rating": 3.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2545688, 34.0412829 ], 
+"type": "Point"}, 
+"id": "Yaki Cafe", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3094569, 34.0560882 ], 
+"type": "Point"}, 
+"id": "BCD Tofu House", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.307842835784, 34.0544733319867 ], 
+"type": "Point"}, 
+"id": "Awoolim", 
+"properties": {"Rating": 4.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3090974, 34.0563023 ], 
+"type": "Point"}, 
+"id": "Jang Teo Bossam", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2975105, 34.0632983 ], 
+"type": "Point"}, 
+"id": "Hong Kong Banjum 0410", 
+"properties": {"Rating": 3.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.3094569, 34.0560882 ], 
+"type": "Point"}, 
+"id": "E-Moon Oak Restaurant", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.1008708, 34.0776663 ], 
+"type": "Point"}, 
+"id": "Ko Hyang Tofu House", 
+"properties": {"Rating": 3.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.282357, 34.0566294 ], 
+"type": "Point"}, 
+"id": "Bobtory", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.125222, 33.8835523 ], 
+"type": "Point"}, 
+"id": "Bellko Korean BBQ", 
+"properties": {"Rating": 4.0}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.2935891, 34.0708598 ], 
+"type": "Point"}, 
+"id": "POT", 
+"properties": {"Rating": 3.5}, 
+"type": "Feature" 
+},
+    {"geometry": 
+{ "coordinates": 
+[ -118.4310043, 34.026637 ], 
+"type": "Point"}, 
+"id": "Galbi King", 
+"properties": {"Rating": 3.5}, 
+"type": "Feature" 
+}]}

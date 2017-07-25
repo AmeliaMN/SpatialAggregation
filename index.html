@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>A Spatial-Aggregation Explorer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Aran Lunzer and Amelia McNamara">
+    <meta name="theme-color" content="#157878">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css">
+    <link rel="stylesheet" href="css/cayman.css">
+    <link rel="stylesheet" href="dist/leaflet-0.7.3/leaflet.css">
+    <link rel="stylesheet" href="css/spatial.css">
+
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  	<script src="dist/leaflet-0.7.3/leaflet.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="scripts/spatial.js"></script>
+  </head>
+  <body onload="loadAndPlotData()">
+    <section class="page-header">
+      <h1 class="project-name">A Spatial-Aggregation Explorer</h1>
+      <h2 class="project-tagline">because your life's not complicated enough</h2>
+    </section>
+
+    <div id="map"></div>
+
+    <section class="main-content">
+    <div>
+<table class="operations">
+  <tr>
+    <td>drag</td>
+    <td><b>pan map</b>, including cells</td>
+  </tr>
+  <tr>
+    <td><b>shift</b>-drag</td>
+    <td><b>move cell grid</b> relative to map</td>
+  </tr>
+  <tr>
+    <td><b>option</b>-drag</td>
+    <td><b>rotate cell grid</b> about map centre</td>
+  </tr>
+  <tr>
+    <td>mouse wheel</td>
+    <td><b>zoom map</b>, including cells</td>
+  </tr>
+  <tr>
+    <td><b>shift</b>-mouse wheel</td>
+    <td><b>zoom cells</b> relative to map (sizes 0 to 8)</td>
+  </tr>
+  <tr>
+    <td><b>space</b></td>
+    <td><b>hide/unhide map</b></td>
+  </tr>
+  <tr>
+    <td><b>escape</b></td>
+    <td><b>temporarily hide cells</b> (while pressed)</td>
+  </tr>
+  <tr><td>&nbsp;</td></tr>
+  <tr>
+    <td><b>E</b></td>
+    <td>hide/unhide empty cells</td>
+  </tr>
+  <tr>
+    <td><b>S</b> or <b>H</b></td>
+    <td>square/hexagonal cells</td>
+  </tr>
+  <tr>
+    <td><b>0</b> to <b>8</b></td>
+    <td>set number of web workers (default=8)</td>
+  </tr>
+</table>
+</div>
+
+<p>After thinking about how binning influences distributions in one dimension (see our <a href="http://tinlizzie.org/histograms/" target="_blank">essay about histograms</a>), we wanted to explore how the same effect worked in two dimensions. Although there are many two-dimensional data representations, maps seemed like a natural fit. </p>
+
+<p>This interactive lets you explore how the size, shape, and orientation of spatial bins impact the distribution. Each bin is colored according to how many points are aggregated into it. Spatial statisticians often call this sort of aggregation &quot;upscaling,&quot; and the variety of distributions that can result from the same underlying point data has applications in many areas, particularly elections.</p>
+
+<p>We are not the first ones to notice how much of a difference the boundaries of spatial bins can make. <a href="https://en.wikipedia.org/wiki/Gerrymandering" target="_blank">Gerrymandering</a> is a term for manipulating voter district boundaries that was coined in 1812. In more recent years, The Washington Post has created a <a href="https://www.washingtonpost.com/news/wonk/wp/2015/03/01/this-is-the-best-explanation-of-gerrymandering-you-will-ever-see/?utm_term=.51914abd2148" target="_blank">ubiquitous static graphic</a> illustrating gerrymandering, and there are other interactives like <a href="http://redistrictinggame.org/index.php" target="_blank">The Redistricting Game</a> and <a href="http://polytrope.com/district/" target="_blank">District</a> that allow players to explore the effect themselves.</p>
+
+<p>If you want to learn more about spatial aggregation, consider watching Amelia&#39;s OpenVisConf talk on <a href="https://www.youtube.com/watch?v=wn5larsRHro" target="_blank">How spatial polygons shape our world</a>, or John Oliver&#39;s <a href="https://www.youtube.com/watch?v=A-4dIImaodQ" target="_blank">segment on gerrymandering</a>.</p>
+
+
+<p>The code that created this interactive is accessible in <a>the source of this webpage</a>. As always, if you have comments, questions, or just want to say Hello, you can tweet at Amelia, <a href="https://twitter.com/AmeliaMN" target="_blank">@AmeliaMN</a>, or email Aran, <tt>aran at acm dot org</tt>.</p>
+
+
+      <pre><code>This is the final element on the page and there should be no margin below this.</code></pre>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner">This page was built using the GitHub Pages <a href="https://github.com/jasonlong/cayman-theme">Cayman</a>theme, which is maintained by <a href="https://github.com/jasonlong">jasonlong</a>.</span>
+      </footer>
+
+    </section>
+
+  </body>
+</html>
