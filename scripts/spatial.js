@@ -1,5 +1,30 @@
-// authors: Aran Lunzer (aran@acm.org), fleshing out ideas and experiments by Amelia McNamara.
-// Viewpoints Research Institute, Los Angeles, July/August 2015
+/*!
+
+spatial.js for interactive http://tinlizzie.org/spatial/ is released under the
+ 
+MIT License
+
+Copyright (c) 2015-2017 Amelia McNamara and Aran Lunzer
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+*/
 
 
         // ************** CHOOSE ONE! *************
@@ -51,7 +76,6 @@
 // ==========================================================
 
 function loadAndPlotData() {
-    console.log("loading...");
     switch(dataName) {
     
     
@@ -60,7 +84,7 @@ function loadAndPlotData() {
     
         case "restaurants":
 
-            d3.json("restaurants2.json", function(collection){
+            d3.json("data/restaurants2.json", function(collection){
                 features = collection.features;
 
                 // IMPORTANT: add to each landmark a coordinate in our lat/long object format (which Leaflet understands)
@@ -81,8 +105,7 @@ function loadAndPlotData() {
 
         case "earthquakes":
         
-            d3.text("2014earthquakes.catalog.txt", function(contents) {
-console.log("...and plotting");
+            d3.text("data/2014earthquakes.catalog.txt", function(contents) {
                 // this file has space-separated (but aligned) columns, and comment lines that start with #, and empty lines
                 var allRows = d3.dsv(" ").parseRows(contents);
                 var features = [];
@@ -136,7 +159,7 @@ console.log("...and plotting");
             map.doubleClickZoom.disable();
 
             // also turn off browser's default scrolling response
-            document.addEventListener('mousewheel', function(evt) { evt.preventDefault() });
+            //document.addEventListener('mousewheel', function(evt) { evt.preventDefault() });  nope - we now want scrolling
 
             map.setView(initialMapOffset, initialZoom);
 
@@ -158,9 +181,8 @@ console.log("...and plotting");
             
             // map._initPathRoot();     // only needed if we were using an svg layer
             var mapElem = d3.select("#map");
-            var clientRect = mapElem.node().getBoundingClientRect();
             mapContainerSize = map.getSize()
-            canvas = d3.select("body").append("canvas").attr("width", mapContainerSize.x).attr("height", mapContainerSize.y).attr("style", "position:absolute; top:"+clientRect.top+"px; left:"+clientRect.left+"px; pointer-events:none");
+            canvas = mapElem.append("canvas").attr("width", mapContainerSize.x).attr("height", mapContainerSize.y).attr("style", "position:absolute; pointer-events:none");
 
             var mapBounds = map.getBounds(), lngRange = mapBounds.getEast()-mapBounds.getWest();
             if (lngRange<0) lngRange+=360;
@@ -241,49 +263,58 @@ console.log("...and plotting");
             map.on("mouseout", function() { cellCount.update(0) });
 
             // for mouse wheel, we make our own zoom function
-            mapElem.on("mousewheel", function() {
+            mapElem.on("mousewheel", function () {
+                d3.event.preventDefault();
                 if (working) return;
 
                 mouseWheelAccumulation += d3.event.wheelDelta;
                 if ((Math.abs(mouseWheelAccumulation)) < 120) return;
-                
+
                 var direction = Math.sign(mouseWheelAccumulation);
                 mouseWheelAccumulation = 0;
                 var mouseLatLng = map.mouseEventToLatLng(d3.event);
                 cellCountLocation = mouseLatLng;        // unless told otherwise
                 if (d3.event.shiftKey) {
-                    requestedCellZoom = Math.min(8, Math.max(0, effectiveCellZoom+direction));
+                    requestedCellZoom = Math.min(8, Math.max(0, effectiveCellZoom + direction));
                     console.log("requested zoom (map, grid): ", map.getZoom(), requestedCellZoom);
                     updateMarks();
                 } else {
-                    var oldZoom = map.getZoom(), newZoom = oldZoom+direction;
-                    if (newZoom<minZoom || newZoom>maxZoom) return;
+                    var oldZoom = map.getZoom(), newZoom = oldZoom + direction;
+                    if (newZoom < minZoom || newZoom > maxZoom) return;
 
                     requestedCellZoom = effectiveCellZoom;
                     console.log("requested zoom (map, grid): ", newZoom, requestedCellZoom);
                     working = true;
                     map.setZoomAround(mouseLatLng, newZoom, { animate: false });
                 }
-                });
+            });
+
+            mapElem.on("mouseover", function () { this.focus() });
             
             // a few keyboard controls
-            mapElem.on("keydown", function() {
+            mapElem.on("keydown", function () {
                 //console.log(d3.event.keyCode);
+                d3.event.preventDefault();
+
                 var keyCode = d3.event.keyCode;
-                if (keyCode===32) { hideMap = !hideMap; updateMarks() }
-                if (keyCode===72 && cellType !== "hexagon") { cellType = "hexagon"; estimateLandmarkDensities(); updateMarks() }
-                if (keyCode===83 && cellType !== "square") { cellType = "square"; estimateLandmarkDensities(); updateMarks() }
-                if (keyCode>=48 && keyCode <=48+maxWorkers) {
-                    activeWorkers = keyCode-48;
-                    console.log(activeWorkers ? "switching to "+activeWorkers+" web workers" : "switching off use of web workers");
+                if (keyCode === 32) { hideMap = !hideMap; updateMarks() }
+                if (keyCode === 72 && cellType !== "hexagon") { cellType = "hexagon"; estimateLandmarkDensities(); updateMarks() }
+                if (keyCode === 83 && cellType !== "square") { cellType = "square"; estimateLandmarkDensities(); updateMarks() }
+                if (false && keyCode >= 48 && keyCode <= 48 + maxWorkers) {  // DISABLED - just stick with the default 8
+                    activeWorkers = keyCode - 48;
+                    console.log(activeWorkers ? "switching to " + activeWorkers + " web workers" : "switching off use of web workers");
                     updateMarks();
-                    }
-                if (keyCode===69) { drawEmptyCells = !drawEmptyCells; updateMarks() }
-                if (keyCode===27) { if (!hideCells) { hideCells = true; updateMarks() } }
+                }
+                if (keyCode === 69) { drawEmptyCells = !drawEmptyCells; updateMarks() }
+                if (keyCode === 27) { if (!hideCells) { hideCells = true; updateMarks() } }
 
                 // secret codes (use shift)
-                if (keyCode===67 && d3.event.shiftKey) { containerPointsFromLeaflet = !containerPointsFromLeaflet; console.log(containerPointsFromLeaflet ? "leaflet" : "approx"); updateMarks() }
-                });
+                if (false && keyCode === 67 && d3.event.shiftKey) { // DISABLED
+                    containerPointsFromLeaflet = !containerPointsFromLeaflet;
+                    console.log(containerPointsFromLeaflet ? "leaflet" : "approx");
+                    updateMarks();
+                }
+            });
             mapElem.on("keyup", function() {
                 var keyCode = d3.event.keyCode;
                 if (keyCode===27) { hideCells = false; updateMarks() }
@@ -357,7 +388,7 @@ console.log("...and plotting");
             cellCount.addTo(map);
             
             // final preparation: focus the map
-            document.getElementById("map").focus();
+            //document.getElementById("map").focus();
             
             // and draw!!
             updateMarks();

@@ -2,10 +2,17 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>A Spatial-Aggregation Explorer</title>
+    <title>Spatial-Aggregation Explorer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Aran Lunzer and Amelia McNamara">
+    <meta name="author" content="Amelia McNamara and Aran Lunzer">
     <meta name="theme-color" content="#157878">
+
+    <meta property="og:url" content="https://tinlizzie.org/spatial/">
+    <meta property="og:title" content="Spatial-Aggregation Explorer">
+	<meta property="og:type" content="website">
+    <meta property="og:description" content="An interactive experiment in 2D binning of earthquake records">
+    <meta property="og:image" content="https://tinlizzie.org/spatial/img/snapshot.png">
+
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css">
     <link rel="stylesheet" href="css/cayman.css">
@@ -18,76 +25,94 @@
     <script src="scripts/spatial.js"></script>
   </head>
   <body onload="loadAndPlotData()">
-    <section class="page-header">
-      <h1 class="project-name">A Spatial-Aggregation Explorer</h1>
-      <h2 class="project-tagline">because your life's not complicated enough</h2>
+    <section class="slimmer-page-header">
+      <h1 class="project-name">Spatial-Aggregation Explorer</h1>
+      <h2 class="project-tagline">an interactive experiment in 2D binning of earthquake records<br />&mdash;by Amelia McNamara and Aran Lunzer</h2>
     </section>
 
+    <section class="main-content">
+    <h3>This is a hands-on kind of page...</h3>
+        <p>The map below shows a dot for each California location that recorded an earthquake (typically a small one) in 2014. Each cell in the grid overlaying the map is shaded according to how many of the dots it encompasses. Mouse over the map to explore it, using the operations listed below; the <span class="highlighted-operation">highlighted</span> operations are ones that change the relationship between the cells and the map. Scroll beyond the map (you'll probably need to use the scroll bar!) to see some extra notes.</p>
+    </section>
+
+    <section class="main-content" style="min-width:960px; max-width:960px; padding:0px">
+        <div style="width:960px; height:170px; position:relative">
+        <table class="operations" style="width:480px; position:absolute; left:60px; top:0px">
+          <tr>
+            <td>drag</td>
+            <td><b>pan map</b>, including cells</td>
+          </tr>
+          <tr class="highlighted-operation">
+            <td><b>shift</b>-drag</td>
+            <td><b>move cell grid</b> relative to map</td>
+          </tr>
+          <tr class="highlighted-operation">
+            <td><b>option</b>-drag</td>
+            <td><b>rotate cell grid</b> about map centre</td>
+          </tr>
+          <tr>
+            <td>mouse wheel</td>
+            <td><b>zoom map</b>, including cells</td>
+          </tr>
+          <tr class="highlighted-operation">
+            <td><b>shift</b>-mouse wheel</td>
+            <td><b>zoom cells</b> relative to map (sizes 0 to 8)</td>
+          </tr>
+        </table>
+        <table class="operations" style="width:400px; position:absolute; left:540px; top:0px">
+          <tr class="highlighted-operation">
+            <td><b>S</b> or <b>H</b></td>
+            <td><b>Square/Hexagonal cells</b></td>
+          </tr>
+          <tr>
+            <td><b>space</b></td>
+            <td><b>fade/unfade map</b></td>
+          </tr>
+          <tr>
+            <td><b>escape</b></td>
+            <td><b>temporarily hide cells</b> (while pressed)</td>
+          </tr>
+          <tr>
+            <td><b>E</b></td>
+            <td><b>hide/unhide Empty cells' outlines</b></td>
+          </tr>
+        </table>
+    </div>
+
+    <br />
     <div id="map"></div>
 
+    </section>
+
     <section class="main-content">
-    <div>
-<table class="operations">
-  <tr>
-    <td>drag</td>
-    <td><b>pan map</b>, including cells</td>
-  </tr>
-  <tr>
-    <td><b>shift</b>-drag</td>
-    <td><b>move cell grid</b> relative to map</td>
-  </tr>
-  <tr>
-    <td><b>option</b>-drag</td>
-    <td><b>rotate cell grid</b> about map centre</td>
-  </tr>
-  <tr>
-    <td>mouse wheel</td>
-    <td><b>zoom map</b>, including cells</td>
-  </tr>
-  <tr>
-    <td><b>shift</b>-mouse wheel</td>
-    <td><b>zoom cells</b> relative to map (sizes 0 to 8)</td>
-  </tr>
-  <tr>
-    <td><b>space</b></td>
-    <td><b>hide/unhide map</b></td>
-  </tr>
-  <tr>
-    <td><b>escape</b></td>
-    <td><b>temporarily hide cells</b> (while pressed)</td>
-  </tr>
-  <tr><td>&nbsp;</td></tr>
-  <tr>
-    <td><b>E</b></td>
-    <td>hide/unhide empty cells</td>
-  </tr>
-  <tr>
-    <td><b>S</b> or <b>H</b></td>
-    <td>square/hexagonal cells</td>
-  </tr>
-  <tr>
-    <td><b>0</b> to <b>8</b></td>
-    <td>set number of web workers (default=8)</td>
-  </tr>
-</table>
-</div>
 
-<p>After thinking about how binning influences distributions in one dimension (see our <a href="http://tinlizzie.org/histograms/" target="_blank">essay about histograms</a>), we wanted to explore how the same effect worked in two dimensions. Although there are many two-dimensional data representations, maps seemed like a natural fit. </p>
+    <h3>Why did we build this?</h3>
 
-<p>This interactive lets you explore how the size, shape, and orientation of spatial bins impact the distribution. Each bin is colored according to how many points are aggregated into it. Spatial statisticians often call this sort of aggregation &quot;upscaling,&quot; and the variety of distributions that can result from the same underlying point data has applications in many areas, particularly elections.</p>
+    <p>Since 2015 the two of us have been discussing the benefits and pitfalls of <i>binning</i>&mdash;in other words, of getting an overview of the distribution of values in some dataset by portioning it into bins. Our thoughts around binning with a <i>single</i> dimension led to our online <a href="http://tinlizzie.org/histograms/" target="_blank">essay about histograms</a>. This page, by contrast, is based on our preliminary investigations of binning on <i>two</i> dimensions.</p>
 
-<p>We are not the first ones to notice how much of a difference the boundaries of spatial bins can make. <a href="https://en.wikipedia.org/wiki/Gerrymandering" target="_blank">Gerrymandering</a> is a term for manipulating voter district boundaries that was coined in 1812. In more recent years, The Washington Post has created a <a href="https://www.washingtonpost.com/news/wonk/wp/2015/03/01/this-is-the-best-explanation-of-gerrymandering-you-will-ever-see/?utm_term=.51914abd2148" target="_blank">ubiquitous static graphic</a> illustrating gerrymandering, and there are other interactives like <a href="http://redistrictinggame.org/index.php" target="_blank">The Redistricting Game</a> and <a href="http://polytrope.com/district/" target="_blank">District</a> that allow players to explore the effect themselves.</p>
+    <p>The two dimensions of the data items being considered here are latitude and longitude, which is what makes it convenient for us to show everything&mdash;the items, and the bins&mdash;overlaid on a map. Spatial statisticians refer to such aggregation as &quot;upscaling,&quot;, and they take a keen interest in how the shapes of the cells, and the way the cells are aligned relative to the data, can lead to a variety of apparent distributions for the same underlying set of data points. That kind of variation is what we hope you saw as you adjusted the cell size and alignment on our earthquake map.</p>
 
-<p>If you want to learn more about spatial aggregation, consider watching Amelia&#39;s OpenVisConf talk on <a href="https://www.youtube.com/watch?v=wn5larsRHro" target="_blank">How spatial polygons shape our world</a>, or John Oliver&#39;s <a href="https://www.youtube.com/watch?v=A-4dIImaodQ" target="_blank">segment on gerrymandering</a>.</p>
+    <p>One specialized application of spatial binning is the division of voters among electoral districts. Manipulating the districts' boundaries to influence, for political gain, how the voters are grouped into these &quot;bins&quot; is the practice of <a href="https://en.wikipedia.org/wiki/Gerrymandering" target="_blank">gerrymandering</a>, which dates back at least two hundred years but has recently come under renewed scrutiny. The Washington Post created a now-famous <a href="https://www.washingtonpost.com/news/wonk/wp/2015/03/01/this-is-the-best-explanation-of-gerrymandering-you-will-ever-see/?utm_term=.51914abd2148" target="_blank">static graphic</a> illustrating how gerrymandering works, and the topic has been addressed in game-like interactives such as <a href="http://redistrictinggame.org/index.php" target="_blank">The Redistricting Game</a> and <a href="http://polytrope.com/district/" target="_blank">District</a>. In April 2017, John Oliver included an informative <a href="https://www.youtube.com/watch?v=A-4dIImaodQ" target="_blank">segment on gerrymandering</a> in his satirical news show.</p>
+    
+    <p>Amelia's OpenVisConf 2017 talk <a href="https://www.youtube.com/watch?v=wn5larsRHro" target="_blank">How spatial polygons shape our world</a> addresses a range of issues around spatial statistics, including gerrymandering. There are also additional references in the <a href="https://tinlizzie.org/spatial/extras/spatial-aggregation-memo.pdf" target="_blank">research note</a> that we assembled as a status report on this project in 2016.</p>
+    
+    <p>The general message that we want to get across is that binning, like many other forms of data summarization, is subject to choices. If someone presents an argument based on binned data, we need to understand whether that particular binning in fact gives a distorted view of the underlying reality. A responsible form of presentation would be one that&mdash;like this page&mdash;has facilities to let readers explore other binnings for themselves; we call on today's visualization-software builders to make such facilities the norm!</p>
 
+    <h3>Getting at the code</h3>
 
-<p>The code that created this interactive is accessible in <a>the source of this webpage</a>. As always, if you have comments, questions, or just want to say Hello, you can tweet at Amelia, <a href="https://twitter.com/AmeliaMN" target="_blank">@AmeliaMN</a>, or email Aran, <tt>aran at acm dot org</tt>.</p>
+    <p>The code that powers this interactive is <a href="https://github.com/AmeliaMN/SpatialAggregation" target="_blank">available on GitHub</a> if you'd like to try adapting it. We make no claims about its generalizability.</p>
+    
+    <h3>Contacting us</h3>
+    If you have comments or questions, or just want to say Hello, you can tweet at Amelia, <a href="https://twitter.com/AmeliaMN" target="_blank">@AmeliaMN</a>, or email Aran, <tt>aran at acm dot org</tt>.</p>
 
-
-      <pre><code>This is the final element on the page and there should be no margin below this.</code></pre>
 
       <footer class="site-footer">
-        <span class="site-footer-owner">This page was built using the GitHub Pages <a href="https://github.com/jasonlong/cayman-theme">Cayman</a>theme, which is maintained by <a href="https://github.com/jasonlong">jasonlong</a>.</span>
+        <span class="site-footer-owner">This page was built using the GitHub Pages <a href="https://github.com/jasonlong/cayman-theme">Cayman</a> theme, which is maintained by <a href="https://github.com/jasonlong">jasonlong</a>.</span>
+
+       <p>
+       <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This work, by <a href="http://www.science.smith.edu/~amcnamara/">Amelia McNamara</a> and <a href="http://www.vpri.org/html/team_bios/aran_lunzer.htm">Aran Lunzer</a>, is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+        </p>
+
       </footer>
 
     </section>
