@@ -1,10 +1,10 @@
 /*!
 
 spatial.js for interactive http://tinlizzie.org/spatial/ is released under the
- 
+
 MIT License
 
-Copyright (c) 2015-2017 Amelia McNamara and Aran Lunzer
+Copyright (c) 2015-2021 Amelia McNamara and Aran Lunzer
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -28,7 +28,7 @@ SOFTWARE.
 
 
         // ************** CHOOSE ONE! *************
-    
+
         //var dataName = "restaurants";
         var dataName = "earthquakes";
 
@@ -77,11 +77,11 @@ SOFTWARE.
 
 function loadAndPlotData() {
     switch(dataName) {
-    
-    
+
+
         // ************************* ADD YOUR DATASET INITIALISATION HERE ******************
         //                     (and be prepared to do some parameter jiggling)
-    
+
         case "restaurants":
 
             d3.json("data/restaurants2.json", function(collection){
@@ -89,9 +89,9 @@ function loadAndPlotData() {
 
                 // IMPORTANT: add to each landmark a coordinate in our lat/long object format (which Leaflet understands)
                 features.forEach(function(d){ d.latlng = latlng(d.geometry.coordinates[1], d.geometry.coordinates[0])});
-     
+
                 initialMapOffset = latlng(34.05, -118.25),
-     
+
                 minZoom = 10, maxZoom = 16, initialZoom = 11,
                 initialCellZoom = 4,
                 landmarkColour = function(opacity) { return "rgba(200, 0, 250, "+(opacity || 1)+")" }
@@ -104,7 +104,7 @@ function loadAndPlotData() {
 
 
         case "earthquakes":
-        
+
             d3.text("data/2014earthquakes.catalog.txt", function(contents) {
                 // this file has space-separated (but aligned) columns, and comment lines that start with #, and empty lines
                 var allRows = d3.dsv(" ").parseRows(contents);
@@ -125,7 +125,7 @@ function loadAndPlotData() {
                 });
 
                 initialMapOffset = latlng(33.45, -117.1),
-                
+
                 minZoom = 6, maxZoom = 13, initialZoom = 8,
                 initialCellZoom = 4,
                 landmarkColour = function(opacity) { return "rgba(200, 0, 250, "+(opacity || 1)+")" }
@@ -145,9 +145,24 @@ function loadAndPlotData() {
             landmarks = features;
 
             map = L.map('map', { zoomAnimation: false });
+
+            // updated nov 2021, following guidance at https://stackoverflow.com/questions/64073635/blank-map-tiles-error-410-gone-mapbox-leaflet-js
+
+            /* previous version:
             mapTiles = L.tileLayer('https://{s}.tiles.mapbox.com/v3/ameliamn.k30bdcii/{z}/{x}/{y}.png', {
-                attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery � <a href="http://mapbox.com">Mapbox</a>',
+                attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery � <a href="http://mapbox.com">Mapbox</a>',
                 maxZoom: maxZoom, minZoom: minZoom
+            }).addTo(map);
+            */
+
+            mapTiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+                attribution: '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
+                tileSize: 512, // ??
+                maxZoom,
+                minZoom,
+                zoomOffset: -1, // ??
+                id: 'mapbox/streets-v11',
+                accessToken: 'pk.eyJ1IjoidGhlbHVueiIsImEiOiJja3c0bDJpcXAwM2c0MzJvOGprbGFvOTB4In0.V6Wwx5xBsnQo42kcZtedTw' // ael token for tinlizzie.org
             }).addTo(map);
 
             // disable all the map's event handlers
@@ -167,7 +182,7 @@ function loadAndPlotData() {
                 .setLatLng(initialMapOffset)
                 .setContent('<p><b>Initialising...</b></p>')
                 .openOn(map);
-    
+
             setTimeout(addLandmarksToMap, 100);
         }
 
@@ -178,7 +193,7 @@ function loadAndPlotData() {
 
             shuffle(landmarks);      // so that when we divide among the workers we should get a uniform spread across the map
             postToAllWorkers({msg: "init", landmarks: landmarks});
-            
+
             // map._initPathRoot();     // only needed if we were using an svg layer
             var mapElem = d3.select("#map");
             mapContainerSize = map.getSize()
@@ -203,7 +218,7 @@ function loadAndPlotData() {
             var draggingMap = draggingGrid = rotatingGrid = false;
             var initialDragOffset, cumulativeShift;
             var initialMouseAngle, initialRotation;
-            
+
             map.on("mousedown", function(e) {
                 var mouseLatLng = e.latlng;
                 if (e.originalEvent.shiftKey) {
@@ -221,11 +236,11 @@ function loadAndPlotData() {
                     initialDragOffset = mouseLatLng;
                 }
                 });
-        
+
             map.on("mouseup", function() { draggingMap = draggingGrid = rotatingGrid = false; map.dragging.disable() });
             map.on("mousemove", function(e) {
                 if (working) return;
-                
+
                 var mapOffset = map.getCenter();
                 var mouseLatLng = e.latlng;
                 cellCountLocation = mouseLatLng;        // unless told otherwise
@@ -290,7 +305,7 @@ function loadAndPlotData() {
             });
 
             mapElem.on("mouseover", function () { this.focus() });
-            
+
             // a few keyboard controls
             mapElem.on("keydown", function () {
                 //console.log(d3.event.keyCode);
@@ -319,7 +334,7 @@ function loadAndPlotData() {
                 var keyCode = d3.event.keyCode;
                 if (keyCode===27) { hideCells = false; updateMarks() }
             })
-            
+
             // a simple colour legend
             legend = L.control({position: 'bottomright'});
             legend.onAdd = function (map) {
@@ -347,14 +362,14 @@ function loadAndPlotData() {
                     })
                     return bestN;
                 }
-                
+
                 // display cell width in a nice way
                 var cellW = minCellWidth*Math.pow(2, cellZoom/2);
                 var cellWkm = L.latLng(gridOrigin).distanceTo(transformCoord(cellW, 0, gridToMapMatrix))/1000;
                 var tens = Math.floor(Math.log10(cellWkm)), tensFactor = Math.pow(10, tens-1);
                 var cellWTwoSigs = Math.round(cellWkm/tensFactor)*tensFactor;
                 var cellWString = cellWTwoSigs.toFixed(Math.max(1-tens, 0));
-                
+
                 var html = '<div style="text-align:center; margin-bottom:4px"><b>cell size '+cellZoom+'</b><br>(~'+cellWString+'km)</div>';
                 var niceCounts = [];
                 // create opacity values with the right kind of spacing, then convert to "nice" landmark-count numbers,
@@ -386,10 +401,10 @@ function loadAndPlotData() {
                 this._div.innerHTML = "<b>count:"+numString+"</b>";
             }
             cellCount.addTo(map);
-            
+
             // final preparation: focus the map
             //document.getElementById("map").focus();
-            
+
             // and draw!!
             updateMarks();
         }
@@ -445,7 +460,7 @@ function loadAndPlotData() {
                 // console.log("cell zoom "+cz+": "+maxC+" max in "+cells.length+" cells");
                 dataPoints.push([cz, maxC/Math.pow(2, cz/2)]);
             }
-            
+
             // use linear regression to figure out a typical density (landmarks per unit area), and store these for each cell zoom
             var lin = linearRegressionLine(linearRegression(dataPoints));
             for (var cz=maxCellZoom; cz>=0; cz--) {
@@ -454,7 +469,7 @@ function loadAndPlotData() {
             }
             usePreciseGrid = oldPrecise;
         }
-    
+
         function updateMarks(whenReadyToDrawFn) {
             working = true;
             workStartTime = Date.now();
@@ -500,10 +515,10 @@ function loadAndPlotData() {
                 gridOrigin = mapOffset;
                 if (cells.length>0) console.log("*** centre not found");
             }
-            
+
             // now that we've decided the map centre and grid origin, rebuild the transformation matrices
             buildMatrices(gridOrigin.lng, gridOrigin.lat, gridRotation);
-            
+
             // boost cell zoom if needed to ensure we have no more than 200 across the screen
             var lngRange = viewRect[2]-viewRect[0];
             if (lngRange<0) lngRange += 360;
@@ -511,12 +526,12 @@ function loadAndPlotData() {
             effectiveCellZoom = requestedCellZoom;
             while (Math.pow(2, effectiveCellZoom/2)<minUsefulZoomFactor) { effectiveCellZoom += 1 };
             if (effectiveCellZoom!==requestedCellZoom) console.log("cell zoom boosted to "+effectiveCellZoom);
-            
+
             // set the opacity scale such that at the sampled maximum the opacity is 0.9
             var sampledMax = cellDensities[effectiveCellZoom];
             cellOpacityScale = d3.scale.sqrt().domain([0, sampledMax]).range([0, 0.9]);
             legend.update(effectiveCellZoom);
-            
+
             // switch to precise mode if there are likely to be fewer than 100 cells across the screen
             var estimatedCellsAcross = lngRange/(minCellWidth*Math.pow(2, effectiveCellZoom/2));
             var bePrecise = estimatedCellsAcross<100;
@@ -565,7 +580,7 @@ function loadAndPlotData() {
                     console.log(Date.now()-workStartTime+"ms");
                 }
             }
-            
+
             waitForWorkers();
 
             function waitForWorkers() {
@@ -578,10 +593,10 @@ function loadAndPlotData() {
         function drawMarks(viewRect) {
             var zoom = map.getZoom();
             recordMapBounds(map.getBounds());   // now that the map has settled.  used for calculating container points.
-            
+
             var ctx = canvas.node().getContext("2d");
             ctx.clearRect(0, 0, canvas.node().width, canvas.node().height);
-            
+
             // draw all the landmarks that are visible
             var op = hideMap ? 0 : landmarkOpacityScale(zoom);
             if (op>0) {
@@ -625,18 +640,18 @@ function loadAndPlotData() {
                     }
                 }
             }
-            
+
             if (traceLocs) console.log("locs used: "+(locs.length-1), "maxX: "+maxLocX, "maxY: "+maxLocY);
 
             working = false;
         }
-    
+
         function updateCellCount() {
             // update landmark count for the latLng location saved in cellCountLocation
             var cell = findCell(cellCountLocation || gridOrigin);
             if (cell) { cellCount.update(cell.landmarkCount) }
         }
-    
+
         function countLandmarks(rect) {
             landmarks.forEach(function(landmark) {
                 var ll = landmark.latlng;
@@ -659,12 +674,12 @@ function loadAndPlotData() {
             var key = rowCol.row*1024+rowCol.col;
             return lookupCellKey(key);
         }
-    
+
         function lookupCellKey(key) {
             var cell = cellsByLocation[key];
             return cell ? cell : null;
         }
-    
+
         function findCellRowCol(loc) {
             var gridLatLng = transformCoord(loc.lng, loc.lat, mapToGridMatrix);
             // ranks can overlap.
@@ -697,9 +712,9 @@ function loadAndPlotData() {
                             })
                         }
                     });
-                    
+
             var bestMatch = pairCands[0];
-            
+
             if (pairCands.length>1) {
                 // figure out which centroid the point is nearest.
                 // we have to do this comparison in degree units, because with hexagons a vertical unit is bigger than a horizontal.
@@ -714,7 +729,7 @@ function loadAndPlotData() {
                 // a couple of useful points near Oceanside (in the earthquake data) for debugging.
                 //if (!counting && Math.abs(loc.lng+117.17)<0.02 && Math.abs(loc.lat-33.22)<0.02) console.log(pairCands[0], bestMatch);
             }
-            
+
             return { row: bestMatch.row, col: bestMatch.col };
         }
 
@@ -745,7 +760,7 @@ function loadAndPlotData() {
             }
             return newM;
         };
-   
+
         function vectorMultiply(m, v) {
             var size=v.length;
             var newV = [];
@@ -806,15 +821,15 @@ function loadAndPlotData() {
 
             return { lat: newLat, lng: newLng }
         }
-    
+
         function buildCells(type, cellZoom, mapRect, gridCentre) {
             var unitLength;
             var cellWidth = minCellWidth*Math.pow(2, cellZoom/2);
             var vertexOffsets, centroidOffsets;
-            
+
             cells = [];
             cellsByLocation = {};
-            
+
             switch(type) {
                 case "square":
                     unitLength = cellWidth/2;
@@ -955,9 +970,9 @@ function loadAndPlotData() {
                 return mb.b + (mb.m * x);
             };
         }
-        
+
 // ---------- handling of grid locations ----------
-        
+
         // in the grid, all points (centroids, vertices) are stored as locRefs, which are pointers into a locList based on their
         // x and y coords (base-grid signed integer longitude and latitude units, respectively).
         // the locs themselves are generated lazily, when someone asks for information about the loc (e.g., its latlng).
@@ -981,7 +996,7 @@ function loadAndPlotData() {
             // someone actually wants the loc object.  generate it if it didn't exist.
             var locIndex = locList[locRef];
             if (locIndex) return locs[locIndex];
-            
+
             locList[locRef] = locs.length;
             var newLoc = privateMakeLoc(locRef);
             locs.push(newLoc);
@@ -1056,7 +1071,7 @@ function loadAndPlotData() {
             mapLatAdjustment = mapContainerSize.y/2 - officialY;  // amount by which our approx calc will overestimate y at map centre
             //console.log(mapLatAdjustment);
         }
-    
+
         function checkPointAnomaly(ll) { // TESTING
             var leafletPt = map.latLngToContainerPoint(ll);
             var estimate = latLngToContainerPoint(ll);
@@ -1109,7 +1124,7 @@ function loadAndPlotData() {
             } else if (message.say) console.log("worker message: "+message.say);
         }
 
-            
+
         function handleMessageToWorker(event) {
             var message = event.data;
 
